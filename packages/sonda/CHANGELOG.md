@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.11.1
+
+### Patch Changes
+
+- ab088cb: Update the Connections node details panel to include incoming/outgoing connection lists with quick navigation.
+- a9669ac: Fix some sources not being properly detected as CommonJS in Rollup.
+- ab088cb: Updated the Connections graph to primarily flow left-to-right and keep directly linked nodes out of the same column where possible. It should no longer produce backtracking or same-column cross-links except in unavoidable circular dependency cases.
+- a9669ac: Use the new `module.inputFormat` property added in Rolldown@v1.0.0-rc.5 to detect CommonJS sources.
+
 ## 0.11.0
 
 ### Minor Changes
@@ -121,6 +130,7 @@ The JSON report format has been completely redesigned. For complete details, ref
 - 0c0113f: BREAKING CHANGE: Distribute only the ESM builds
 - 0c0113f: BREAKING CHANGE: Rename the `detailed` configuration option to `deep`.
 - 0c0113f: BREAKING CHANGE: Reports are now saved to the `.sonda` folder by default. The `filename` configuration option has been replaced with the `outputDir` option. Each new report will end with incremented numbers to avoid overwriting previous reports. For example:
+
   - `.sonda/sonda_1.html`
   - `.sonda/sonda_2.html`
   - `.sonda/sonda_3.html`
@@ -264,9 +274,9 @@ Besides the new features listed below, this release changes some default behavio
 
 ```json
 {
-	"detailed": true,
-	"gzip": true,
-	"brotli": true
+  "detailed": true,
+  "gzip": true,
+  "brotli": true
 }
 ```
 
